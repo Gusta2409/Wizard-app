@@ -20,6 +20,4 @@ export class EuSouPage implements OnInit{
   console.log(this.dados);
   }
 
-
-
 }

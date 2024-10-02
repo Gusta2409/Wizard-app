@@ -8,6 +8,36 @@ const routes: Routes = [
     loadChildren: () => import('./eu-sou/euSou.module').then( m => m.EuSouPageModule)
   },
   {
+    //TESTE
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
+  },
+  {
+    //TESTE
+    path: 'minhas-turmas',
+    loadChildren: () => import('./minhas-turmas/minhasTurmas.module').then(m => m.MinhasTurmasModule)
+  },
+  {
+    //TESTE
+    path: 'turma/:diaSemana',
+    loadChildren: () => import('./turma/turma.module').then(m => m.TurmaModule)
+  },
+  {
+    //TESTE
+    path: 'turma-info/:idTurma',
+    loadChildren: () => import('./turma-info/turmaInfo.module').then(m => m.TurmaInfoModule)
+  },
+  {
+    //TESTE
+    path: 'chamadas',
+    loadChildren: () => import('./chamadas/chamadas.module').then(m => m.ChamadasModule)
+  },
+  {
+    //TESTE
+    path: 'chamada-info',
+    loadChildren: () => import('./chamadaInfo/chamadaInfo.module').then(m => m.ChamadaInfoModule)
+  },
+  {
     path: 'home/:tipoUsuario',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },

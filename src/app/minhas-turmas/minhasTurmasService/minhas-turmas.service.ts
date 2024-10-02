@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class InicioService {
+export class MinhasTurmasService {
 
-  private apiUrl = 'http://localhost:4200/api/dados';
+  private apiUrl = 'http://localhost:4200';
 
   constructor(private http: HttpClient) { }
 
@@ -17,4 +16,3 @@ export class InicioService {
       return this.http.get(this.apiUrl);
   }
 }
-

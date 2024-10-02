@@ -1,0 +1,62 @@
+*{
+    font-family: "Gothic A1";
+    color: #002C4D;
+  }
+
+  .logo{
+    text-align: center; 
+    padding-top: 30%;
+    padding-bottom: 5%;
+  }
+
+  .titulo{
+    text-align: center;
+    color: #002C4D;
+  }
+
+  ion-input[type=email]{
+    border: 2px solid #002C4D;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 90%;
+  }
+
+  ion-input[type=password]{
+    border: 2px solid #002C4D;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 90%;
+  }
+
+ .input{
+    margin: 20px;
+    font-size: 19px;
+ }
+
+ .ion-button{
+    height: 50px; 
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-transform: none;
+  }
+
+  .link-cadastro{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .link-cadastro span{
+    color: red;
+  }
+
+  .icon-voltar{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+  }

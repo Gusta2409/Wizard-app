@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { InicioPageRoutingModule } from './inicio-routing.module';
-import { InicioPage } from './inicio.page';
+import { TurmaRoutingModule } from './turma-routing.module';
+import { TurmaPage } from './turma.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
+    TurmaRoutingModule
   ],
-  declarations: [InicioPage]
+  declarations: [TurmaPage]
 })
-export class InicioPageModule {}
+export class TurmaModule {}

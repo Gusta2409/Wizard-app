@@ -1,28 +1,37 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Log In</ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
+
 
 <ion-content>
+  <div class="icon-voltar">
+    <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+  </div>
+  <div class="logo">
+    <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+  </div>
+  <div class="titulo">
+    <h1>Login</h1>
+  </div>
   <form>
-    <ion-item lines="full">
-      <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email" required [(ngModel)]="email" name="email"></ion-input>
-    </ion-item>
+    <div class="input">
+      <ion-label><strong>E-mail</strong></ion-label>
+      <ion-input type="email" required [(ngModel)]="email" name="email" placeholder="E-mail"></ion-input>
+    </div>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required [(ngModel)]="senha" name="senha"></ion-input>
-    </ion-item>
+    <div class="input">
+      <ion-label><strong>Senha</strong></ion-label>
+      <ion-input type="password" required [(ngModel)]="senha" name="senha" placeholder="Senha"></ion-input>
+    </div>
 
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="secondary" expand="block" (click)="login()">Entrar</ion-button>
-      </ion-col>
-    </ion-row>
+    <div class="input">
+      <ion-button type="submit" color="secondary" expand="block" class="ion-button" (click)="login()">Entrar</ion-button>
+    </div>
+
+    <div class="link-cadastro">
+      <ion-label>Não tem conta ainda?<br>Cadastre-se <span>aqui</span></ion-label>
+    </div>
   </form>
 </ion-content>

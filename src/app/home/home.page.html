@@ -1,19 +1,27 @@
+<header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
 
-
-<ion-content class="auth-form" padding>
-<div style="text-align: center; padding-top: 45%; padding-bottom: 5%;">
-  <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
-</div>
-<div style="text-align: center;">
-    <h1>Desejo Fazer</h1>
-</div>
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <ion-button [routerLink]="['/login/'+tipoUsuario]" expand="block" color="secondary" style="height: 65px; width: 85%; margin-left: auto; margin-right: auto; font-weight: bold;" >Login</ion-button>
-
-      <ion-button [routerLink]="['/registro/'+tipoUsuario]" expand="block" color="danger" style="height: 65px; width: 85%; margin-left: auto; margin-right: auto; margin-top: 10%; font-weight: bold;">Cadastro</ion-button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</ion-content>
+  <ion-content class="auth-form" padding>
+    <div class="icon-voltar">
+      <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+    </div>
+    <div class="logo">
+      <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+    </div>
+    <div class="titulo">
+        <h1>Desejo Fazer</h1>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="['/login/'+tipoUsuario]" expand="block" color="secondary" class="ion-button">Login</ion-button>
+          <ion-button [routerLink]="['/registro/'+tipoUsuario]" expand="block" color="danger" class="ion-button">Cadastro</ion-button>
+          <!-- TESTE -->
+          <ion-button [routerLink]="['/inicio']" expand="block" color="danger" class="ion-button">ENTRAR TESTE</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

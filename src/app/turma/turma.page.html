@@ -2,7 +2,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  </header>
+</header>
   
     <ion-content class="auth-form" padding>
       <div class="icon-voltar">
@@ -12,14 +12,17 @@
         <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
       </div>
       <div class="titulo">
-          <h1>Bem-vindo(a) {{nomeUsuarioLogado}} !</h1>
-          <h1>Menu</h1>
+          <h1>Minhas Turmas</h1>
+      </div>
+      <div class="sub-titulo">
+        <h4>{{diaSemana}}</h4>
+        <img src="../../assets/icon-add.png" width="80%" alt="Icone Adicionar">
       </div>
       <ion-grid>
         <ion-row>
-          <ion-col>
-            <ion-button [routerLink]="['/minhas-turmas']" expand="block" color="secondary" class="ion-button">Minhas turmas</ion-button>
-          </ion-col>
+            <ion-col *ngFor="let turma of turmas">
+                <ion-button [routerLink]="['/turma-info/'+turma.id]" expand="block" color="secondary" class="ion-button">Turma {{turma.modalidade}} {{turma.horario}}</ion-button>
+            </ion-col>
         </ion-row>
       </ion-grid>
     </ion-content>

@@ -1,0 +1,29 @@
+<header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </header>
+  
+    <ion-content class="auth-form" padding>
+      <div class="icon-voltar">
+        <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+      </div>
+      <div class="logo">
+        <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+      </div>
+      <div class="titulo">
+          <h1>Minhas Turmas</h1>
+      </div>
+      <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button [routerLink]="['/turma/Segunda-feira']" expand="block" color="secondary" class="ion-button">Segunda-feira</ion-button>
+                <ion-button [routerLink]="['/turma/Terça-feira']" expand="block" color="danger" class="ion-button">Terça-feira</ion-button>
+                <ion-button [routerLink]="['/turma/Quarta-feira']" expand="block" color="secondary" class="ion-button">Quarta-feira</ion-button>
+                <ion-button [routerLink]="['/turma/Quinta-feira']" expand="block" color="danger" class="ion-button">Quinta-feira</ion-button>
+                <ion-button [routerLink]="['/turma/Sexta-feira']" expand="block" color="secondary" class="ion-button">Sexta-feira</ion-button>
+                <ion-button [routerLink]="['/turma/Sábado']" expand="block" color="danger" class="ion-button">Sábado</ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>

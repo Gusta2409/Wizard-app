@@ -8,16 +8,12 @@ import { InicioService } from './inicioService/inicio.service';
 })
 export class InicioPage implements OnInit {
 
-  dados: any;
+  nomeUsuarioLogado: string;
 
   constructor(private inicioService: InicioService) { }
 
   ngOnInit() {
-    console.log("Lista de usuários professores");
-    this.inicioService.getDados().subscribe(data => {
-      this.dados = data;
-  });
-  console.log(this.dados);
+      this.nomeUsuarioLogado = localStorage.getItem('nomeUsuarioLogado');
   }
 
 }

@@ -1,27 +1,25 @@
-#container {
-    text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-  
-    color: #8c8c8c;
-  
-    margin: 0;
-  }
-  
-  #container a {
-    text-decoration: none;
-  }
+*{
+  font-family: "Gothic A1";
+}
+
+.logo{
+  text-align: center; 
+  padding-top: 45%;
+  padding-bottom: 5%;
+}
+
+.titulo{
+  text-align: center;
+  color: #002C4D;
+}
+
+.ion-button{
+  height: 65px; 
+  width: 85%; 
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: none;
+}
