@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
   {
@@ -8,32 +7,34 @@ const routes: Routes = [
     loadChildren: () => import('./eu-sou/euSou.module').then( m => m.EuSouPageModule)
   },
   {
-    //TESTE
+    path: 'adicionar-turma/:diaSemana',
+    loadChildren: () => import('./adicionar-turma/adicionar-turma.module').then(m => m.AdicionarTurmaModule)
+  },
+  {
+    path: 'editar-turma/:idTurma',
+    loadChildren: () => import('./editar-turma/editar-turma.module').then(m => m.EditarTurmaModule)
+  },
+  {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
   },
   {
-    //TESTE
     path: 'minhas-turmas',
     loadChildren: () => import('./minhas-turmas/minhasTurmas.module').then(m => m.MinhasTurmasModule)
   },
   {
-    //TESTE
     path: 'turma/:diaSemana',
     loadChildren: () => import('./turma/turma.module').then(m => m.TurmaModule)
   },
   {
-    //TESTE
     path: 'turma-info/:idTurma',
     loadChildren: () => import('./turma-info/turmaInfo.module').then(m => m.TurmaInfoModule)
   },
   {
-    //TESTE
     path: 'chamadas',
     loadChildren: () => import('./chamadas/chamadas.module').then(m => m.ChamadasModule)
   },
   {
-    //TESTE
     path: 'chamada-info',
     loadChildren: () => import('./chamadaInfo/chamadaInfo.module').then(m => m.ChamadaInfoModule)
   },

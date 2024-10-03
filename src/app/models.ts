@@ -22,3 +22,16 @@ export class Turma {
     }
 }
 
+export class AlunoTurma {
+
+    id: string;
+    aluno: string;
+    alunoId: string;
+    turma: string;
+    livro: string;
+    idade: number;
+
+    constructor() {
+    }
+}
+

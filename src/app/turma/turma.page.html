@@ -16,13 +16,11 @@
       </div>
       <div class="sub-titulo">
         <h4>{{diaSemana}}</h4>
-        <img src="../../assets/icon-add.png" width="80%" alt="Icone Adicionar">
+        <img src="../../assets/icon-add.png" width="80%" alt="Icone Adicionar" [routerLink]="['/adicionar-turma/'+diaSemana]">
       </div>
       <ion-grid>
-        <ion-row>
-            <ion-col *ngFor="let turma of turmas">
+        <ion-row *ngFor="let turma of turmas">
                 <ion-button [routerLink]="['/turma-info/'+turma.id]" expand="block" color="secondary" class="ion-button">Turma {{turma.modalidade}} {{turma.horario}}</ion-button>
-            </ion-col>
         </ion-row>
       </ion-grid>
     </ion-content>

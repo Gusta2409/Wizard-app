@@ -1,0 +1,64 @@
+<header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
+  
+    <ion-content class="auth-form" padding>
+      <div class="icon-voltar">
+        <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+      </div>
+      <div class="logo">
+        <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+      </div>
+      <div class="titulo">
+          <h1>Editar Turma</h1>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 0%;">
+        <div class="sub-titulo">
+          <span>Modalidade : </span>
+        </div>
+        <ion-item>
+          <ion-select label="Modalidade" placeholder="Modalidade" [(ngModel)]="modalidade" name="modalidade">
+            <ion-select-option value="Connections">Connections</ion-select-option>
+            <ion-select-option value="Interactive">Interactive</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 0%;">
+        <div class="sub-titulo">
+          <span>Horário : </span>
+        </div>
+        <ion-item>
+          <ion-select label="Horário" placeholder="Horário"  [(ngModel)]="horario" name="horario">
+            <ion-select-option value="08h-10h">08h-10h</ion-select-option>
+            <ion-select-option value="10h-12h">10h-12h</ion-select-option>
+            <ion-select-option value="12h-14h">12h-14h</ion-select-option>
+            <ion-select-option value="14h-16">14h-16h</ion-select-option>
+            <ion-select-option value="18h-18h">16h-18h</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="sub-titulo" style="display: flex; align-items: center; padding-right: 15px;">
+        <h4>Alunos</h4>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 0%;">
+        <div class="sub-titulo">
+          <span>Nome : </span>
+        </div>
+        <ion-item>
+          <ion-select label="Aluno" placeholder="Aluno" [(ngModel)]="alunoSelecionado" name="aluno">
+            <ion-select-option *ngFor="let aluno of alunos" [value]="aluno.id" >{{aluno.nome}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div style="display: flex; justify-content: center; padding-top: 10%;">
+        <ion-button style="width: 50%;" expand="block" color="secondary" (click)="editarCadastro()">Salvar</ion-button>
+      </div>
+  
+    </ion-content>

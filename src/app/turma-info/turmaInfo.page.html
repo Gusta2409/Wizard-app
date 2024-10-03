@@ -14,9 +14,9 @@
       <div class="titulo">
           <h1>Minhas Turmas</h1>
       </div>
-      <div class="sub-titulo">
+      <div class="sub-titulo" style="display: flex; align-items: center; padding-right: 15px;">
         <h4>{{turmaSelecionada.diaSemana}}</h4>
-        <img src="../../assets/icon-editar.png" width="80%" alt="Icone Editar">
+        <img src="../../assets/icon-editar.png" width="80%" alt="Icone Editar" [routerLink]="['/editar-turma/'+turmaSelecionada.id]">
       </div>
       <div class="titulo-turma">
         <h4>{{turmaSelecionada.modalidade}} {{turmaSelecionada.horario}}</h4>
@@ -39,17 +39,12 @@
           <ion-col class="cabecalho"><strong>Livro</strong></ion-col>
           <ion-col class="cabecalho"><strong>Lições</strong></ion-col>
         </ion-row>
-        <ion-row class="linha">
-          <ion-col class="cabecalho">Fulano</ion-col>
-          <ion-col class="cabecalho">15</ion-col>
-          <ion-col class="cabecalho">T4</ion-col>
+        <ion-row class="linha" *ngFor="let aluno of alunos">
+          <ion-col class="cabecalho">{{aluno.aluno}}</ion-col>
+          <ion-col class="cabecalho">{{aluno.idade}}</ion-col>
+          <ion-col class="cabecalho">{{aluno.livro}}</ion-col>
           <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
         </ion-row>
-        <ion-row class="linha">
-          <ion-col class="cabecalho">Ciclano</ion-col>
-          <ion-col class="cabecalho">20</ion-col>
-          <ion-col class="cabecalho">W2</ion-col>
-          <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
-        </ion-row>
+        
       </ion-grid>
     </ion-content>

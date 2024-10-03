@@ -8,23 +8,21 @@ import { Turma } from 'src/app/models';
 @Injectable({
   providedIn: 'root'
 })
-export class TurmaService {
+export class AdicionarTurmaService {
 
-  turmas: Turma[];
   turma: Turma;
 
   private url = environment.apiUrl + "turma/";
 
   constructor(private http: HttpClient) { }
 
-  getTurmaPorProfessorEDia(professor: string, diaSemana: string): Promise<Turma[]>{
+  cadastrarTurma(turma: Partial<Turma>): Promise<Turma> {
     return new Promise((resolve, reject) => {
-      const body = { professor: professor, diaSemana: diaSemana };
-      this.http.post<Turma[]>(this.url + "turmaPorProfessorEDia", body).subscribe({
-        next: (turmas) => resolve(turmas),
+      this.http.post<Turma>(this.url + "cadastrar", turma).subscribe({
+        next: (turmaCriada) => resolve(turmaCriada),
         error: (err) => reject(err),
       });
     });
   }
-  
+
 }
