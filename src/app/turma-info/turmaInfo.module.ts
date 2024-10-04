@@ -12,6 +12,9 @@ import { TurmaInfoPage } from './turmaInfo.page';
     IonicModule,
     TurmaInfoRoutingModule
   ],
-  declarations: [TurmaInfoPage]
+  declarations: [TurmaInfoPage],
+  entryComponents: [TurmaInfoPage],
+  exports: [TurmaInfoPage]
+
 })
 export class TurmaInfoModule {}

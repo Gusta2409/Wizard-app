@@ -10,7 +10,7 @@ import { AlunoTurma, Turma } from "../models";
 })
 export class TurmaInfoPage implements OnInit {
   idTurma: string = this.route.snapshot.params["idTurma"];
-  turmaSelecionada: Turma = new Turma();
+  turmaSelecionada: Turma;
   alunos: AlunoTurma[];
 
   constructor(
@@ -19,16 +19,18 @@ export class TurmaInfoPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log("TESTE PARA VER SE ESTA PASSANDO AQUI")
     this.getTurmaSelecionada(this.idTurma);
-    this.getAlunosDaTurma(this.idTurma);
   }
 
   getTurmaSelecionada(idTurma: string) {
+    this.turmaSelecionada = new Turma;
     this.turmaInfoService.getTurmaPorId(idTurma).then((res) => {
       if (res != undefined) {
+        console.log("TURMA ESTA SENDO SELECIONADA")
         this.turmaSelecionada = res;
-        console.log("TURMA SELECIONADA");
-        console.log(res);
+        console.log(this.turmaSelecionada)
+        this.getAlunosDaTurma(idTurma);
       } else {
         alert("Erro ao buscar pelas turmas!");
       }

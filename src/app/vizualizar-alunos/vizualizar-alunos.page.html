@@ -5,30 +5,15 @@
 </header>
   
     <ion-content class="auth-form" padding>
-      <div class="icon-voltar" [routerLink]="['/turma/'+turmaSelecionada.diaSemana]">
+      <div class="icon-voltar" [routerLink]="['/editar-turma/'+idTurma]">
         <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
       </div>
       <div class="logo">
         <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
       </div>
       <div class="titulo">
-          <h1>Minhas Turmas</h1>
+          <h1>Vizualizar Alunos</h1>
       </div>
-      <div class="sub-titulo" style="display: flex; align-items: center; padding-right: 15px;">
-        <h4>{{turmaSelecionada.diaSemana}}</h4>
-        <img src="../../assets/icon-editar.png" width="80%" alt="Icone Editar" [routerLink]="['/editar-turma/'+turmaSelecionada.id]">
-      </div>
-      <div class="titulo-turma">
-        <h4>{{turmaSelecionada.modalidade}} {{turmaSelecionada.horario}}</h4>
-      </div>
-      <ion-grid>
-        <ion-row>
-            <ion-col>
-                <ion-button [routerLink]="[]" color="secondary" class="ion-button">Adicionar chamada</ion-button>
-                <ion-button [routerLink]="['/chamadas']" color="danger" class="ion-button">Visualizar chamadas</ion-button>
-            </ion-col>
-        </ion-row>
-      </ion-grid>
       <div class="titulo-turma">
         <h4>Alunos</h4>
       </div>
@@ -43,7 +28,7 @@
           <ion-col class="cabecalho">{{aluno.aluno}}</ion-col>
           <ion-col class="cabecalho">{{aluno.idade}}</ion-col>
           <ion-col class="cabecalho">{{aluno.livro}}</ion-col>
-          <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
+          <ion-col class="cabecalho"><img src="../../assets/lixeira.png" alt="Icone Lixeira" (click)="deletarAluno(aluno.id)"></ion-col>
         </ion-row>
         
       </ion-grid>

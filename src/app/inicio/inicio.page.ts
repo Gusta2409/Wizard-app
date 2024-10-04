@@ -9,11 +9,13 @@ import { InicioService } from './inicioService/inicio.service';
 export class InicioPage implements OnInit {
 
   nomeUsuarioLogado: string;
+  tipoUsuario: string;
 
   constructor(private inicioService: InicioService) { }
 
   ngOnInit() {
       this.nomeUsuarioLogado = localStorage.getItem('nomeUsuarioLogado');
+      this.tipoUsuario = localStorage.getItem('tipoUsuarioLogado');
   }
 
 }

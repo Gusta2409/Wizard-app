@@ -5,7 +5,7 @@
 </header>
   
     <ion-content class="auth-form" padding>
-      <div class="icon-voltar">
+      <div class="icon-voltar" [routerLink]="['/turma-info/'+idTurma]">
         <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
       </div>
       <div class="logo">
@@ -37,12 +37,12 @@
             <ion-select-option value="10h-12h">10h-12h</ion-select-option>
             <ion-select-option value="12h-14h">12h-14h</ion-select-option>
             <ion-select-option value="14h-16">14h-16h</ion-select-option>
-            <ion-select-option value="18h-18h">16h-18h</ion-select-option>
+            <ion-select-option value="16h-18h">16h-18h</ion-select-option>
           </ion-select>
         </ion-item>
       </div>
 
-      <div class="sub-titulo" style="display: flex; align-items: center; padding-right: 15px;">
+      <div class="sub-titulo" style="display: flex; align-items: center; padding-right: 15px; margin-top: 0%; margin-bottom: 0%;">
         <h4>Alunos</h4>
       </div>
 
@@ -52,9 +52,39 @@
         </div>
         <ion-item>
           <ion-select label="Aluno" placeholder="Aluno" [(ngModel)]="alunoSelecionado" name="aluno">
-            <ion-select-option *ngFor="let aluno of alunos" [value]="aluno.id" >{{aluno.nome}}</ion-select-option>
+            <ion-select-option *ngFor="let aluno of alunos" [value]="aluno">{{aluno.nome}}</ion-select-option>
           </ion-select>
         </ion-item>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 0%;">
+        <div class="sub-titulo">
+          <span>Idade : </span>
+        </div>
+        <div class="input">
+          <ion-input type="number" required [(ngModel)]="idade" name="idade" placeholder="Idade"></ion-input>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 0%;">
+        <div class="sub-titulo">
+          <span>Livro : </span>
+        </div>
+        <ion-item>
+          <ion-select label="Livro" placeholder="Livro"  [(ngModel)]="livro" name="livro">
+            <ion-select-option value="T1">T1</ion-select-option>
+            <ion-select-option value="T2">T2</ion-select-option>
+            <ion-select-option value="T3">T3</ion-select-option>
+            <ion-select-option value="T4">T4</ion-select-option>
+            <ion-select-option value="T5">T5</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+
+      <div style="display: flex; justify-content: center; padding-top: 10%;">
+        <ion-button style="width: 40%; margin: auto; font-size: x-small;" expand="block" color="danger" (click)="adicionarAlunoTurma()">Adicionar aluno</ion-button>
+        <ion-button [routerLink]="['/vizualizar-alunos/'+idTurma]" style="width: 40%; margin: auto; font-size: x-small;" expand="block" color="danger">Vizualizar alunos</ion-button>
       </div>
 
       <div style="display: flex; justify-content: center; padding-top: 10%;">

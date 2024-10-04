@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./editar-turma/editar-turma.module').then(m => m.EditarTurmaModule)
   },
   {
+    path: 'vizualizar-alunos/:idTurma',
+    loadChildren: () => import('./vizualizar-alunos/vizualizar-alunos.module').then(m => m.VizualizarAlunosPageModule)
+  },
+  {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
   },

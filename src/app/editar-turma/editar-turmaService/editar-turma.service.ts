@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Turma, Usuario } from 'src/app/models';
+import { AlunoTurma, Turma, Usuario } from 'src/app/models';
 
 
 @Injectable({
@@ -14,6 +14,7 @@ export class EditarTurmaService {
 
   private turmaUrl = environment.apiUrl + "turma/";
   private usuarioUrl = environment.apiUrl + "usuario/";
+  private alunoTurmaUrl = environment.apiUrl + "alunosturma/";
 
   constructor(private http: HttpClient) { }
 
@@ -43,5 +44,15 @@ getAlunos(tipoUsuario: string): Promise<Usuario[]>{
     });
   });
 }
+
+cadastrarAlunoTurma(alunoTurma: Partial<AlunoTurma>): Promise<AlunoTurma> {
+  return new Promise((resolve, reject) => {
+    this.http.post<AlunoTurma>(this.alunoTurmaUrl + "cadastrar", alunoTurma).subscribe({
+      next: (alunoTurma) => resolve(alunoTurma),
+      error: (err) => reject(err),
+    });
+  });
+}
+
 
 }

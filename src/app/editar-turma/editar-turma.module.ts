@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { EditarTurmaPage } from './editar-turma.page';
 import { EditarTurmaRoutingModule } from './editar-turma-routing.module';
+import { TurmaInfoPage } from '../turma-info/turmaInfo.page';
 
 
 @NgModule({
@@ -11,8 +12,10 @@ import { EditarTurmaRoutingModule } from './editar-turma-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    EditarTurmaRoutingModule
+    EditarTurmaRoutingModule,
   ],
-  declarations: [EditarTurmaPage]
+  declarations: [EditarTurmaPage],
+  entryComponents: [TurmaInfoPage],
+  providers: [TurmaInfoPage]
 })
 export class EditarTurmaModule {}
