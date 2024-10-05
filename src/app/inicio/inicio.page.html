@@ -17,8 +17,11 @@
       </div>
       <ion-grid>
         <ion-row>
-          <ion-col>
+          <ion-col *ngIf="tipoUsuario == 'professor'">
             <ion-button [routerLink]="['/minhas-turmas']" expand="block" color="secondary" class="ion-button">Minhas turmas</ion-button>
+          </ion-col>
+          <ion-col *ngIf="tipoUsuario == 'aluno'">
+            <ion-button [routerLink]="['/minhas-licoes']" expand="block" color="secondary" class="ion-button">Minhas lições</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>

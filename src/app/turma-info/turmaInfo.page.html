@@ -43,7 +43,7 @@
           <ion-col class="cabecalho">{{aluno.aluno}}</ion-col>
           <ion-col class="cabecalho">{{aluno.idade}}</ion-col>
           <ion-col class="cabecalho">{{aluno.livro}}</ion-col>
-          <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
+          <ion-col class="cabecalho" [routerLink]="['/vizualizar-licoes/'+aluno.alunoId+'/'+turmaSelecionada.id]"><img src="../../assets/icon-lupa.png" alt="Icone Lupa"></ion-col>
         </ion-row>
         
       </ion-grid>

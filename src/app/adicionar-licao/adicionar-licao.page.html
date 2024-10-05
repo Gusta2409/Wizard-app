@@ -5,7 +5,7 @@
 </header>
 
   <ion-content class="auth-form" padding>
-    <div class="icon-voltar">
+    <div class="icon-voltar" [routerLink]="['/chamadas/'+idTurma]">
       <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
     </div>
     <div class="logo">
@@ -17,7 +17,7 @@
 
     <div style="display: flex; align-items: center; padding: 0%;">
       <div class="sub-titulo">
-        <h3>Fulano</h3>
+        <h3>{{aluno.nome}}</h3>
       </div>
     </div>
 
@@ -96,7 +96,7 @@
     </ion-grid>
 
     <div style="display: flex; justify-content: center; padding-top: 10%;">
-      <ion-button style="width: 50%;" expand="block" color="danger">Registrar</ion-button>
+      <ion-button style="width: 50%;" expand="block" color="danger" (click)="cadastrarTurma()">Registrar</ion-button>
     </div>
 
   </ion-content>

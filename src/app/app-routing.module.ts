@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./minhas-turmas/minhasTurmas.module').then(m => m.MinhasTurmasModule)
   },
   {
+    path: 'minhas-licoes',
+    loadChildren: () => import('./minhas-turmas/minhasTurmas.module').then(m => m.MinhasTurmasModule)
+  },
+  {
     path: 'turma/:diaSemana',
     loadChildren: () => import('./turma/turma.module').then(m => m.TurmaModule)
   },
@@ -68,8 +72,12 @@ const routes: Routes = [
     loadChildren: () => import('./components/menu/menu.module').then(m => m.MenuModule)
   },
   {
-    path: 'adicionar-licao/:idAluno',
+    path: 'adicionar-licao/:idAluno/:idTurma',
     loadChildren: () => import('./adicionar-licao/adicionar-licao.module').then(m => m.AdicionarLicaoModule)
+  },
+  {
+    path: 'vizualizar-licoes/:idAluno/:idTurma',
+    loadChildren: () => import('./vizualizar-licoes/vizualizar-licoes.module').then(m => m.VizualizarLicoesPageModule)
   },
 ];
 

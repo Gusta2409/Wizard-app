@@ -37,7 +37,7 @@ export class AdicionarTurmaPage implements OnInit {
     await toast.present();
   }
 
-  cadastrarUsuario() {
+  cadastrarTurma() {
     const turma = new Turma();
 
     if ( this.diaSemana == null || this.professor == null || this.horario == null || this.modalidade == null ) {

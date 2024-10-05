@@ -77,6 +77,7 @@ export class AdicionarChamadaPage implements OnInit {
           .then((res) => {});
       }
       this.apresentarMensagem("Chamada registrada com sucesso!");
+      this.router.navigate(["turma-info/" + this.idTurma]);
     }
   }
 }

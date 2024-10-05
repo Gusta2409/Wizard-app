@@ -64,5 +64,20 @@ export class Chamada {
     }
 }
 
+export class Licao {
+
+    id: string;
+    aluno: string;
+    licao: string;
+    a1: string;
+    l: string;
+    e: string;
+    a2: string;
+    f: string;
+    data: Date;
+
+    constructor() {
+    }
+}
 
 

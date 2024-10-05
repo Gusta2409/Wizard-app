@@ -1,0 +1,41 @@
+<header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
+  
+    <ion-content class="auth-form" padding>
+      <div class="icon-voltar" [routerLink]="['/turma-info/'+idTurma]">
+        <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+      </div>
+      <div class="logo">
+        <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+      </div>
+      <div class="titulo">
+          <h1>Vizualizar Alunos</h1>
+      </div>
+      <div class="titulo-turma">
+        <h4>Alunos</h4>
+      </div>
+      <ion-grid>
+        <ion-row class="linha">
+          <ion-col class="cabecalho"><strong>Lição</strong></ion-col>
+          <ion-col class="cabecalho"><strong>F</strong></ion-col>
+          <ion-col class="cabecalho"><strong>A</strong></ion-col>
+          <ion-col class="cabecalho"><strong>L</strong></ion-col>
+          <ion-col class="cabecalho"><strong>E</strong></ion-col>
+          <ion-col class="cabecalho"><strong>A</strong></ion-col>
+          <ion-col class="cabecalho"><strong>Editar</strong></ion-col>
+        </ion-row>
+        <ion-row class="linha" *ngFor="let licao of licaoes">
+          <ion-col class="cabecalho">{{licao.licao}}</ion-col>
+          <ion-col class="cabecalho">{{licao.f}}</ion-col>
+          <ion-col class="cabecalho">{{licao.a1}}</ion-col>
+          <ion-col class="cabecalho">{{licao.l}}</ion-col>
+          <ion-col class="cabecalho">{{licao.e}}</ion-col>
+          <ion-col class="cabecalho">{{licao.a2}}</ion-col>
+          <ion-col class="cabecalho"><img src="../../assets/lixeira.png" alt="Icone Lixeira" (click)="deletarLicao(licao.id)"></ion-col>
+        </ion-row>
+        
+      </ion-grid>
+    </ion-content>

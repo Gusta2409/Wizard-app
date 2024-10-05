@@ -5,7 +5,7 @@
 </header>
   
 <ion-content class="auth-form" padding>
-    <div class="icon-voltar">
+    <div class="icon-voltar" [routerLink]="['/chamadas/'+idTurma]">
         <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
     </div>
     <div class="logo">
@@ -36,7 +36,7 @@
         <ion-row class="linha" *ngFor="let chamada of chamadas">
           <ion-col class="cabecalho">{{chamada.alunoTurma}}</ion-col>
           <ion-col class="cabecalho"><ion-checkbox disabled [(ngModel)]="chamada.presenca" ></ion-checkbox></ion-col>
-          <ion-col class="cabecalho" [routerLink]="['/adicionar-licao/'+chamada.idAlunoTurma]"><img src="../../assets/icon-add.png" alt="Icone Add"></ion-col>
+          <ion-col class="cabecalho" [routerLink]="['/adicionar-licao/'+chamada.idAlunoTurma+'/'+chamada.turma]"><img src="../../assets/icon-add.png" alt="Icone Add"></ion-col>
         </ion-row>
       </ion-grid>
 </ion-content>
