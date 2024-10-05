@@ -1,0 +1,51 @@
+<header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
+
+<ion-content class="auth-form" padding>
+  <div class="icon-voltar">
+      <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+  </div>
+  <div class="logo">
+      <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+  </div>
+  <div class="titulo">
+      <h1>Adicionar Chamada</h1>
+  </div>
+  <div class="sub-titulo">
+      <h4>{{turmaSelecionada.diaSemana}}</h4>
+      <div class="data-item">
+          <img src="../../assets/icon-calendar.png" alt="Icone Calendario">
+          <div class="data"> <ion-datetime locale="pt-BR" [(ngModel)]="dataSelecionada" name="data"></ion-datetime></div>
+      </div>
+  </div>
+  <div class="titulo-turma">
+      <h4>{{turmaSelecionada.modalidade}} {{turmaSelecionada.horario}}</h4>
+  </div>
+  <div class="titulo-turma">
+      <h4>Alunos</h4>
+  </div>
+  <ion-grid>
+      <ion-row class="linha">
+        <ion-col class="cabecalho"><strong>Nome</strong></ion-col>
+        <ion-col class="cabecalho"><strong>Livro</strong></ion-col>
+        <ion-col class="cabecalho"><strong>Presença</strong></ion-col>
+      </ion-row>
+      <ion-row class="linha" *ngFor="let aluno of alunosTurma">
+        <ion-col class="cabecalho">{{aluno.aluno}}</ion-col>
+        <ion-col class="cabecalho">{{aluno.livro}}</ion-col>
+        <ion-col class="cabecalho"><ion-checkbox [(ngModel)]="aluno.presenca" name="presenca"></ion-checkbox></ion-col>
+      </ion-row>
+    </ion-grid>
+    
+
+
+
+
+    
+    <div style="display: flex; justify-content: center; padding-top: 10%;">
+      <ion-button style="width: 50%;" expand="block" color="danger" (click)="salvarChamada()">Adicionar Chamada</ion-button>
+    </div>
+</ion-content>

@@ -19,7 +19,6 @@ export class TurmaInfoPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log("TESTE PARA VER SE ESTA PASSANDO AQUI")
     this.getTurmaSelecionada(this.idTurma);
   }
 
@@ -27,9 +26,7 @@ export class TurmaInfoPage implements OnInit {
     this.turmaSelecionada = new Turma;
     this.turmaInfoService.getTurmaPorId(idTurma).then((res) => {
       if (res != undefined) {
-        console.log("TURMA ESTA SENDO SELECIONADA")
         this.turmaSelecionada = res;
-        console.log(this.turmaSelecionada)
         this.getAlunosDaTurma(idTurma);
       } else {
         alert("Erro ao buscar pelas turmas!");
@@ -41,8 +38,6 @@ export class TurmaInfoPage implements OnInit {
     this.turmaInfoService.getAlunosPorTurma(idTurma).then((res) => {
       if (res != undefined) {
         this.alunos = res;
-        console.log("ALUNOS DA TURMA");
-        console.log(res);
       } else {
         alert("Erro ao buscar pelos alunos da turma!");
       }

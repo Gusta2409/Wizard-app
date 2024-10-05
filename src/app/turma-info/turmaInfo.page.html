@@ -24,8 +24,8 @@
       <ion-grid>
         <ion-row>
             <ion-col>
-                <ion-button [routerLink]="[]" color="secondary" class="ion-button">Adicionar chamada</ion-button>
-                <ion-button [routerLink]="['/chamadas']" color="danger" class="ion-button">Visualizar chamadas</ion-button>
+                <ion-button [routerLink]="['/adicionar-chamada/'+turmaSelecionada.id]" color="secondary" class="ion-button">Adicionar chamada</ion-button>
+                <ion-button [routerLink]="['/chamadas/'+turmaSelecionada.id]" color="danger" class="ion-button">Visualizar chamadas</ion-button>
             </ion-col>
         </ion-row>
       </ion-grid>

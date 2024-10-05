@@ -20,12 +20,13 @@
       <div class="titulo-turma">
         <h4>Interactive 14h-16h</h4>
       </div>
+
+      <!--<p>{{ "2024-10-05T01:13:27.263+00:00" | date:'dd/MM/yyyy' }}</p>-->
+
       <ion-grid>
         <ion-row>
             <ion-col>
-                <ion-button [routerLink]="['/chamada-info']" expand="block" color="secondary" class="ion-button">01/01/24</ion-button>
-                <ion-button [routerLink]="[]" expand="block" color="danger" class="ion-button">07/07/24</ion-button>
-                <ion-button [routerLink]="[]" expand="block" color="secondary" class="ion-button">14/07/24</ion-button>
+                <ion-button *ngFor="let data of datas" [routerLink]="['/chamada-info/'+idTurma+'/'+data]" expand="block" color="secondary" class="ion-button">{{data | date:'dd/MM/yyyy'}}</ion-button>
             </ion-col>
         </ion-row>
       </ion-grid>

@@ -35,12 +35,16 @@ const routes: Routes = [
     loadChildren: () => import('./turma-info/turmaInfo.module').then(m => m.TurmaInfoModule)
   },
   {
-    path: 'chamadas',
+    path: 'chamadas/:idTurma',
     loadChildren: () => import('./chamadas/chamadas.module').then(m => m.ChamadasModule)
   },
   {
-    path: 'chamada-info',
+    path: 'chamada-info/:idTurma/:data',
     loadChildren: () => import('./chamadaInfo/chamadaInfo.module').then(m => m.ChamadaInfoModule)
+  },
+  {
+    path: 'adicionar-chamada/:idTurma',
+    loadChildren: () => import('./adicionar-chamada/adicionar-chamada.module').then(m => m.AdicionarChamadaModule)
   },
   {
     path: 'home/:tipoUsuario',
@@ -62,8 +66,13 @@ const routes: Routes = [
   {
     path: 'wizard',
     loadChildren: () => import('./components/menu/menu.module').then(m => m.MenuModule)
-  }
+  },
+  {
+    path: 'adicionar-licao/:idAluno',
+    loadChildren: () => import('./adicionar-licao/adicionar-licao.module').then(m => m.AdicionarLicaoModule)
+  },
 ];
+
 
 @NgModule({
   imports: [

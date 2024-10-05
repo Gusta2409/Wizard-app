@@ -12,7 +12,4 @@ export class MinhasTurmasService {
 
   constructor(private http: HttpClient) { }
 
-  getDados(): Observable<any> {
-      return this.http.get(this.apiUrl);
-  }
 }

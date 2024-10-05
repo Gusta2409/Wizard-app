@@ -2,24 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Turma } from 'src/app/models';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChamadasService {
+export class AdicionarTurmaService {
 
-  private urlChamada = environment.apiUrl + "chamada/";
+  turma: Turma;
 
+  private url = environment.apiUrl + "turma/";
 
   constructor(private http: HttpClient) { }
 
-  getDatas(idTurma: string): Promise<Date[]>{
+  cadastrarTurma(turma: Partial<Turma>): Promise<Turma> {
     return new Promise((resolve, reject) => {
-      this.http.get<Date[]>(this.urlChamada + "datas/" + idTurma).subscribe({
-        next: (datas) => resolve(datas),
+      this.http.post<Turma>(this.url + "cadastrar", turma).subscribe({
+        next: (turmaCriada) => resolve(turmaCriada),
         error: (err) => reject(err),
       });
     });
   }
+
 }

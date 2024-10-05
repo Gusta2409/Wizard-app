@@ -15,10 +15,10 @@
         <h1>Chamadas</h1>
     </div>
     <div class="sub-titulo">
-        <h4>Segunda-feira</h4>
+        <h4>{{turmaSelecionada.diaSemana}}</h4>
         <div class="data-item">
             <img src="../../assets/icon-calendar.png" alt="Icone Calendario">
-            <div class="data"><p>01/01/24</p></div>
+            <div class="data"><p>{{data | date:'dd/MM/yyyy'}}</p></div>
         </div>
     </div>
     <div class="titulo-turma">
@@ -30,21 +30,13 @@
     <ion-grid>
         <ion-row class="linha">
           <ion-col class="cabecalho"><strong>Nome</strong></ion-col>
-          <ion-col class="cabecalho"><strong>Livro</strong></ion-col>
           <ion-col class="cabecalho"><strong>Presença</strong></ion-col>
           <ion-col class="cabecalho"><strong>Lições</strong></ion-col>
         </ion-row>
-        <ion-row class="linha">
-          <ion-col class="cabecalho">Fulano</ion-col>
-          <ion-col class="cabecalho">T4</ion-col>
-          <ion-col class="cabecalho"><ion-checkbox checked></ion-checkbox></ion-col>
-          <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
-        </ion-row>
-        <ion-row class="linha">
-          <ion-col class="cabecalho">Ciclano</ion-col>
-          <ion-col class="cabecalho">W2</ion-col>
-          <ion-col class="cabecalho"><ion-checkbox disabled></ion-checkbox></ion-col>
-          <ion-col class="cabecalho"><img src="../../assets/icon-lupa.png" alt="Icone Lupa" ></ion-col>
+        <ion-row class="linha" *ngFor="let chamada of chamadas">
+          <ion-col class="cabecalho">{{chamada.alunoTurma}}</ion-col>
+          <ion-col class="cabecalho"><ion-checkbox disabled [(ngModel)]="chamada.presenca" ></ion-checkbox></ion-col>
+          <ion-col class="cabecalho" [routerLink]="['/adicionar-licao/'+chamada.idAlunoTurma]"><img src="../../assets/icon-add.png" alt="Icone Add"></ion-col>
         </ion-row>
       </ion-grid>
 </ion-content>

@@ -1,0 +1,102 @@
+<header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</header>
+
+  <ion-content class="auth-form" padding>
+    <div class="icon-voltar">
+      <img src="../../assets/icon-voltar.png" alt="Icone Voltar">
+    </div>
+    <div class="logo">
+      <img src="../../assets/wizard-logo.png" width="80%" alt="Logo Wizard">
+    </div>
+    <div class="titulo">
+        <h1>Registrar lição</h1>
+    </div>
+
+    <div style="display: flex; align-items: center; padding: 0%;">
+      <div class="sub-titulo">
+        <h3>Fulano</h3>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; padding: 0%;">
+      <div class="sub-titulo">
+        <h5>Lição :     </h5>
+      </div>
+      <div class="input linha" style="margin-left: 10px;">
+        <ion-input type="text" required [(ngModel)]="licao" name="idade" placeholder="Lição"></ion-input>
+      </div>
+    </div>
+
+    <div class="sub-titulo">
+      <div class="data-item">
+        <h5>Data : </h5>
+          <img src="../../assets/icon-calendar.png" alt="Icone Calendario">
+          <div class="data"> <ion-datetime locale="pt-BR" [(ngModel)]="dataSelecionada" name="data"></ion-datetime></div>
+      </div>
+  </div>
+
+    <ion-grid style="margin-top: 10%;">
+      <ion-row class="linha">
+        <ion-col class="cabecalho"><strong>F</strong></ion-col>
+        <ion-col class="cabecalho"><strong>A</strong></ion-col>
+        <ion-col class="cabecalho"><strong>L</strong></ion-col>
+        <ion-col class="cabecalho"><strong>E</strong></ion-col>
+        <ion-col class="cabecalho"><strong>A</strong></ion-col>
+      </ion-row>
+      <ion-row class="linha">
+        <ion-col class="cabecalho"><ion-item>
+          <ion-select [(ngModel)]="f" name="f">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="E">E</ion-select-option>
+          </ion-select>
+        </ion-item></ion-col>
+        <ion-col class="cabecalho"><ion-item>
+          <ion-select [(ngModel)]="a1" name="a1">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="E">E</ion-select-option>
+          </ion-select>
+        </ion-item></ion-col>
+        <ion-col class="cabecalho"><ion-item>
+          <ion-select [(ngModel)]="l" name="l">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="E">E</ion-select-option>
+          </ion-select>
+        </ion-item></ion-col>
+        <ion-col class="cabecalho"><ion-item>
+          <ion-select [(ngModel)]="e" name="e">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="E">E</ion-select-option>
+          </ion-select>
+        </ion-item></ion-col>
+        <ion-col class="cabecalho"><ion-item>
+          <ion-select [(ngModel)]="a2" name="a2">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="E">E</ion-select-option>
+          </ion-select>
+        </ion-item></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div style="display: flex; justify-content: center; padding-top: 10%;">
+      <ion-button style="width: 50%;" expand="block" color="danger">Registrar</ion-button>
+    </div>
+
+  </ion-content>

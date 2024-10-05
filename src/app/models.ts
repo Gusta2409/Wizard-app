@@ -35,3 +35,34 @@ export class AlunoTurma {
     }
 }
 
+
+export class AlunoChamadaDTO {
+
+    id: string;
+    aluno: string;
+    alunoId: string;
+    turma: string;
+    livro: string;
+    idade: number;
+    presenca: boolean;
+
+    constructor() {
+        this.presenca = false;
+    }
+}
+
+export class Chamada {
+
+    id: string;
+    alunoTurma: string;
+    idAlunoTurma: string;
+    turma: string;
+    data: Date;
+    presenca: boolean;
+
+    constructor() {
+    }
+}
+
+
+
