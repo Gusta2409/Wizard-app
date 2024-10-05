@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'minhas-licoes',
-    loadChildren: () => import('./minhas-turmas/minhasTurmas.module').then(m => m.MinhasTurmasModule)
+    loadChildren: () => import('./minhas-licoes/minhasLicoes.module').then(m => m.MinhasLicoesModule)
   },
   {
     path: 'turma/:diaSemana',

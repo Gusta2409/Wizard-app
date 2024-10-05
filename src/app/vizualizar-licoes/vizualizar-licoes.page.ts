@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlunoTurma, Licao } from '../models';
+import { AlunoTurma, Licao, Usuario } from '../models';
 import { ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { VizualizarLicoesService } from './vizualizar-licoesService/vizualizar-licoes.service';
@@ -13,6 +13,7 @@ export class VizualizarLicoesPage implements OnInit{
 
   idTurma: string = this.route.snapshot.params["idTurma"];
   idAluno: string = this.route.snapshot.params["idAluno"];
+  aluno: Usuario = new Usuario();
 
   licaoes: Licao[] = [];
 
@@ -24,6 +25,17 @@ export class VizualizarLicoesPage implements OnInit{
 
   ngOnInit(): void {
     this.getLicoes(this.idAluno);
+    this.getUsuario(this.idAluno)
+  }
+
+  getUsuario(id: string){
+    this.vizualizarLicoesService.buscarAlunoPorId(id).then(res => {
+      if(res != undefined){
+        this.aluno = res;
+      } else {
+        alert('Erro ao buscar pelo aluno!');
+      }
+    })
   }
 
   getLicoes(aluno: string){

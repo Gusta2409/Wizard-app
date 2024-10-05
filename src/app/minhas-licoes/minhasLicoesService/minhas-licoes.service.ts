@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Licao, Usuario } from 'src/app/models';
 import { environment } from 'src/environments/environment';
-import { AlunoTurma, Licao, Usuario } from 'src/app/models';
-
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class VizualizarLicoesService {
+export class MinhasLicoesService {
 
+  
   private licaoUrl = environment.apiUrl + "licao/";
   private usuarioUrl = environment.apiUrl + "usuario/";
 
@@ -25,15 +26,6 @@ export class VizualizarLicoesService {
     });
   }
 
-  deleteLicao(idLicao: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      this.http.delete<void>(this.licaoUrl + "delete/" + idLicao).subscribe({
-        next: () => resolve(),
-        error: (err) => reject(err),
-      });
-    });
-  }
-
   buscarAlunoPorId(id: string): Promise<Usuario> {
     return new Promise((resolve, reject) => {
         this.http.get<Usuario>(this.usuarioUrl +id).subscribe({
@@ -44,4 +36,5 @@ export class VizualizarLicoesService {
   
 }
 }
+
 
